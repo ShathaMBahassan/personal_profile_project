@@ -17,6 +17,8 @@ class Education(models.Model):
     currentlly=models.BooleanField(default=False)
     date_start=models.DateField()
     date_end=models.DateField()
+    about_me = models.ForeignKey(aboutMe,on_delete=models.CASCADE)
+    
 
 class certificate(models.Model):
     name = models.CharField(max_length=200)
