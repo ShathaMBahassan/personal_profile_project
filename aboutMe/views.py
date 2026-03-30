@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .models import aboutMe
+from .models import aboutMe , Education
 
 # Create your views here.
 
 def home(request):
     about_me = aboutMe.objects.all().first()
-    context={'about_me':about_me}
+    edu = Education.objects.filter(about_me=1)
+    context={'about_me':about_me , 'edu':edu}
     return render(request, 'aboutMe\home.html',context)
