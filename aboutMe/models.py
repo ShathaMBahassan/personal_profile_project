@@ -25,6 +25,7 @@ class certificate(models.Model):
     issuer = models.CharField()
     date_start=models.DateField()
     date_end=models.DateField()
+    about_me = models.ForeignKey(aboutMe,on_delete=models.CASCADE)
 
 class experince(models.Model):
     company = models.CharField(max_length=100)
