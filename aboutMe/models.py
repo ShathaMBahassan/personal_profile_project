@@ -31,7 +31,11 @@ class experince(models.Model):
     company = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
-    decription= models.TextField()   
+    decription= models.TextField()  
+    about_me=models.ForeignKey(aboutMe,on_delete=models.CASCADE) 
+    currentlly=models.BooleanField(default=True)
+    date_start= models.DateField(null=True, blank=True)
+    date_end= models.DateField(null=True, blank=True)
 
 class skills(models.Model):
     name = models.CharField(max_length=100)
