@@ -309,9 +309,9 @@
                     <h3 class="fs-2 text-body-emphasis">Education</h3>
                     
                     <p>{% for i in edu%} 
-                         {{forloop.counter}}- {{i.degree}} {{i.major}}
-                         <br>
-                        {% endfor%}</p> <a href="#"
+                        {{forloop.counter}}- {{i.degree}} {{i.major}}
+                        <br>
+                    {% endfor%}</p> <a href="#"
                         class="icon-link">
                         Call to action
                         <svg class="bi" aria-hidden="true">
@@ -326,8 +326,11 @@
                         </svg>
                     </div>
                     <h3 class="fs-2 text-body-emphasis">Certificate</h3>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                        sentence and probably just keep going until we run out of words.</p> <a href="#"
+                    <p>
+                        {% for i in cer%}
+                        {{forloop.counter}}- {{i.name}} , {{i.issuer}} <br>
+                        {% endfor %}
+                    </p> <a href="#"
                         class="icon-link">
                         Call to action
                         <svg class="bi" aria-hidden="true">
