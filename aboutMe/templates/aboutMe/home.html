@@ -110,6 +110,12 @@
             --bs-btn-active-border-color: #5a23c8
         }
 
+        .custom-img{
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+        }
+
         .bd-mode-toggle {
             z-index: 1500
         }
@@ -269,62 +275,41 @@
         </symbol>
     </svg>
     <main>
+        {% load static %}
         <h1 class="visually-hidden">Features examples</h1>
         <div class="container px-4 py-5" id="featured-3">
             <h2 class="pb-2 border-bottom">{{about_me.name}}</h2>
             <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
                 <div class="feature col">
                     <div
-                        class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
-                            <use xlink:href="#collection"></use>
-                        </svg>
+                        class="d-inline-flex align-items-center justify-content-center">
+                       <img src="{% static 'images/me.svg' %}" class="custom-img">
                     </div>
                     <h3 class="fs-2 text-body-emphasis">About Me</h3>
-                    <p>{{about_me.summary}}</p> <a href="#"
-                        class="icon-link">
-                        Call to action
-                        <svg class="bi" aria-hidden="true">
-                            <use xlink:href="#chevron-right"></use>
-                        </svg> </a>
+                    <p>{{about_me.summary}}</p> 
                 </div>
                 <div class="feature col">
                     <div
-                        class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
-                            <use xlink:href="#people-circle"></use>
-                        </svg>
+                        class="d-inline-flex align-items-center justify-content-center">
+                       <img src="{% static 'images/graduation.svg' %}" class="custom-img">
                     </div>
                     <h3 class="fs-2 text-body-emphasis">Education</h3>
-                    
                     <p>{% for i in edu%} 
-                        {{forloop.counter}}- {{i.degree}} {{i.major}}
+                        {{forloop.counter}}- {{i.degree}} {{i.major}} 
                         <br>
-                    {% endfor%}</p> <a href="#"
-                        class="icon-link">
-                        Call to action
-                        <svg class="bi" aria-hidden="true">
-                            <use xlink:href="#chevron-right"></use>
-                        </svg> </a>
+                    {% endfor%}</p> 
                 </div>
                 <div class="feature col">
                     <div
-                        class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
-                            <use xlink:href="#toggles2"></use>
-                        </svg>
+                        class="d-inline-flex align-items-center justify-content-center">
+                       <img src="{% static 'images/certification.svg' %}" class="custom-img">
                     </div>
                     <h3 class="fs-2 text-body-emphasis">Certificate</h3>
                     <p>
                         {% for i in cer%}
                         {{forloop.counter}}- {{i.name}} , {{i.issuer}} <br>
                         {% endfor %}
-                    </p> <a href="#"
-                        class="icon-link">
-                        Call to action
-                        <svg class="bi" aria-hidden="true">
-                            <use xlink:href="#chevron-right"></use>
-                        </svg> </a>
+                    </p> 
                 </div>
             </div>
         </div>
@@ -351,10 +336,7 @@
                             {{i.date_start}} - {{i.date_end}}
                             {% endif %}
                             {% endfor %}
-                        </p> <a href="#"
-                            class="btn btn-primary">
-                            Primary button
-                        </a>
+                        </p>
                     </div>
                 </div>
                 <div class="col d-flex align-items-start">
@@ -366,24 +348,12 @@
                     </div>
                     <div>
                         <h3 class="fs-2 text-body-emphasis">Skills</h3>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                            sentence and probably just keep going until we run out of words.</p> <a href="#"
-                            class="btn btn-primary">
-                            Primary button
-                        </a>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                    <div
-                        class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
-                            <use xlink:href="#tools"></use>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="fs-2 text-body-emphasis">Membership</h3>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                            sentence and probably just keep going until we run out of words.</p> <a href="#"
+                        <p>
+                            {% for i in skill %}
+                            {{forloop.counter}} - {{i.name}} <br>
+                            {% endfor %}
+                            
+                        </p> <a href="#"
                             class="btn btn-primary">
                             Primary button
                         </a>
