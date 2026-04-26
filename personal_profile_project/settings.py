@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'portfoliodb',
         'USER': 'postgres',
         'HOST': 'localhost',
-        'PASSWORD':'bahassan@ils',
+        'PASSWORD':'',
         'PORT':'5432',
     }
 }
